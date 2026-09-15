@@ -23,6 +23,110 @@ h1 {
     font-size: 24px;
 }
 
+.topbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.topbar h1 {
+    margin: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #666;
+    white-space: nowrap;
+    padding-top: 4px;
+}
+
+.logout-link {
+    color: #6c4bf4;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+/* ---- 로그인 / 회원가입 ---- */
+.auth-container {
+    text-align: center;
+}
+
+.auth-sub {
+    color: #666;
+    font-size: 14px;
+    margin: 0 0 24px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.auth-form input {
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.auth-form button {
+    margin-top: 6px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #6c4bf4;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.auth-form button:hover {
+    background: #5a3ce0;
+}
+
+.auth-switch {
+    margin: 20px 0 0;
+    font-size: 13.5px;
+    color: #666;
+}
+
+.auth-switch a {
+    color: #6c4bf4;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+.flash-list {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+    text-align: left;
+}
+
+.flash-item {
+    background: #fdeef0;
+    color: #e0475f;
+    font-size: 13.5px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
 .summary {
     color: #666;
     margin-bottom: 20px;
