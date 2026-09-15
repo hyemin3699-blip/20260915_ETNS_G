@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETNS 할일관리</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>📋 ETNS 할일관리</h1>
+
+    <form action="{{ url_for('add') }}" method="post" class="add-form">
+        <input type="text" name="content" placeholder="할 일을 입력하세요" autofocus required>
+        <button type="submit">추가</button>
+    </form>
+
+    <p class="summary">전체 {{ total }}개 · 완료 {{ done_count }}개</p>
+
+    <ul class="task-list">
+        {% for task in tasks %}
+        <li class="{{ 'done' if task['done'] else '' }}">
+            <form action="{{ url_for('toggle', task_id=task['id']) }}" method="post" class="toggle-form">
+                <button type="submit" class="check-btn">
+                    {{ '✅' if task['done'] else '⬜' }}
+                </button>
+            </form>
+            <span class="content">{{ task['content'] }}</span>
+            <span class="date">{{ task['created_at'] }}</span>
+            <form action="{{ url_for('delete', task_id=task['id']) }}" method="post" class="delete-form">
+                <button type="submit" class="delete-btn">삭제</button>
+            </form>
+        </li>
+        {% else %}
+        <li class="empty">등록된 할 일이 없습니다.</li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>
